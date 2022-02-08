@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
+#include <time.h>
 
 #define RAND_FLOAT ((double)rand()/(double)RAND_MAX)
 
@@ -106,6 +107,8 @@ int main(int argc, char* argv[]) {
 	}
 
 	printf("Generating random numbers...\n");
+
+	srand(time(NULL));
 	for (uintmax_t i = 0; i < count; ++i) {
 		fprintf(stream, "%lf ", (RAND_FLOAT * (max - min)) + min);
 	}
