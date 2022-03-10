@@ -1,5 +1,4 @@
-# rng - Random Number Generator
-# Aaron Rader, 2022
+# Random Number Generator - Aaron Rader, 2022
 
 Generates a series of random real numbers, coded to work with command-line arguments.
 
