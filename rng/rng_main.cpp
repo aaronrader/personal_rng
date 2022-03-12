@@ -111,4 +111,6 @@ int main(int argc, char* argv[]) {
 			"Minimum generated:\t" << minGen << endl <<
 			"Maximum generated:\t" << maxGen << endl;
 	}
+
+	return EXIT_SUCCESS;
 }
