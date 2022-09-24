@@ -1,5 +1,5 @@
 /*
-* Program:		rng
+* Program:	rng
 * Author:		Aaron Rader
 * Date:			03/2022
 *
@@ -17,6 +17,16 @@
 
 using namespace std;
 
+void print_help() {
+	cout << "Random Number Generator - Aaron Rader, 2022" << endl;
+	cout << "usage: rng [-(d|i)frc][--help] [filename]" << endl;
+	cout << "\td|i - use integer values" << endl;
+	cout << "\tf - display a full report listing all generated numbers to the console" << endl;
+	cout << "\tr - display a summary report" << endl;
+	cout << "\tc - console app mode" << endl;
+	cout << "\t--help - display these instructions" << endl;
+}
+
 int main(int argc, char* argv[]) {
 	//comman-line args
 	vector<string> args(argv + 1, argv + argc);
@@ -27,6 +37,13 @@ int main(int argc, char* argv[]) {
 	bool report = false;		//should a report be printed to console showing success and simple statistics on the data?
 	bool console = false;		//shoud this be a console application? (allows custom min, max, and number of values)
 	if (args.size() > 0 && args.front()[0] == '-') {
+		//check for help switch
+		if (args.front() == "--help") {
+			print_help();
+			return EXIT_SUCCESS;
+		}
+
+		//read all switches and set flags
 		for (size_t i = 1; i < args.front().length(); ++i) {
 			switch (args.front()[i]) {
 			case 'd':
@@ -51,6 +68,7 @@ int main(int argc, char* argv[]) {
 		args.erase(args.begin());
 	}
 
+	//default output is a new text file in the current directory
 	string fileName = "rng.txt";
 	if (args.size() > 0) {
 		fileName = args.front();

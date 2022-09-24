@@ -1,14 +1,13 @@
 # Random Number Generator - Aaron Rader, 2022
 
-Generates a series of random real numbers, coded to work with command-line arguments.
+Generates a series of random whole or real numbers, coded to work with command-line arguments or as a console application.
 
-Command line arguments are as follows:
-1. rng.exe
-2. (unsigned)numbers to generate	(optional)
-3. minimum number to generate		  (optional)
-4. maximum number to generate		  (optional)
+Command line arguments are as follows:</br>
+rng [-(d|i)frc][--help] [filename]</br>
+d|i - use integer values</br>
+f - display a full report listing all generated numbers to the console</br>
+r - display a summary report</br>
+c - console app mode</br>
+--help - display these instructions
 
-- if 1 argument is passed, 1000 numbers between 0 and 1 (inclusive) will be writted to stdout
-- if 2 arguments are passed, the 2nd argument will define the amount of numbers between 0 and 1 (inclusive) to write to stdout
-- if 3 arguments are passed, the 3rd argument will define the maximum number to generate
-- if 4 arguments are passed, the 3rd argument will define the minimum number and the 4th argument will define the maximum number to generate
+*note: rng will create a file rng.txt containing the generated numbers by default. The user must specify a filename if they wish to store the numbers in a different file.*
